@@ -1,4 +1,5 @@
 const express = require('express');
+require('./db/mongo');
 const todoRoutes = require('./routes/todo');
 
 const app   = express();
