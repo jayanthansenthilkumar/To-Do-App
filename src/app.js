@@ -1,12 +1,12 @@
 const express = require('express');
-const todoRoutes = require('./routes/todoRoutes');
+const todoRoutes = require('./routes/todo');
 
 const app   = express();
-const PORT = 61830;
 
-app.use('/todoRoutes', todoRoutes);
+app.use(express.json());
+app.use('/todo', todoRoutes);
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(61830, () => {
+    console.log(`Server is running on http://localhost:61830`);
     }
 );
