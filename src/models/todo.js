@@ -22,7 +22,17 @@ async function deleteTODO(_id) {
     return deleteResponse;
 }
 
+async function updateTODO(_id, title, description, method) {
+    const updateResponse = await todoModel.updateOne({ _id }, {
+        title,
+        description,
+        method,
+    });
+    return updateResponse;
+}
+
 module.exports = {
     createTODO,
-    deleteTODO
+    deleteTODO,
+    updateTODO,
 };
