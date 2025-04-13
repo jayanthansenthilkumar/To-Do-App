@@ -1,4 +1,4 @@
-function createTODO(title,description,method) {
+async function createTODO(title,description,method) {
   return {
     title,
     description,
