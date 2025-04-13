@@ -31,8 +31,14 @@ async function updateTODO(_id, title, description, method) {
     return updateResponse;
 }
 
+async function getTODO() {
+    const todos = await todoModel.find({});
+    return todos;
+}
+
 module.exports = {
     createTODO,
     deleteTODO,
     updateTODO,
+    getTODO,
 };

@@ -1,5 +1,5 @@
 const express = require('express');
-const { createTODO,deleteTODO,updateTODO } = require('../models/todo');
+const { createTODO,deleteTODO,updateTODO,getTODO } = require('../models/todo');
 const router = express.Router();
 
 
@@ -20,5 +20,10 @@ router.put('/:id', async (req, res) => {
     const { title,description,method } = req.body;
     const resp = await updateTODO(_id,title,description,method);
     res.send(resp);
+});
+
+router.get('/', async (req, res) => {
+    const todos = await getTODO();
+    res.send(todos);
 });
 module.exports = router;
