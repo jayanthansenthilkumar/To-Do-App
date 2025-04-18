@@ -3,7 +3,6 @@ require('./db/mongo');
 const todoRoutes = require('./routes/todo');
 
 const app   = express();
-
 app.use(express.json());
 app.use('/todo', todoRoutes);
 
